@@ -358,7 +358,9 @@ controller.on('Marlin:state', function(data) {
     pos.y = Number(data.pos.y).toFixed(3);
     pos.z = Number(data.pos.z).toFixed(3);
     // Assume if we get this callback it's because we are connected
-    var stateText = "Connected";
+    var stateText = "Rate: " + data.feedrate
+    + " Rapid Rate: " + data.rapidFeedrate
+    + " Program: " + data.modal.program;
 
     $('[data-route="axes"] [data-name="active-state"]').text(stateText);
     $('[data-route="axes"] [data-name="mpos-label"]').text(mlabel);
