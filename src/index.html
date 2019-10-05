@@ -357,7 +357,7 @@
                 </div>
             </div>
             <div class="row no-gutter bottom-row">
-                <div class="col-xs-4">
+                <!-- <div class="col-xs-4">
                     <button
                         type="button"
                         class="btn btn-default"
@@ -365,7 +365,7 @@
                         onclick="cnc.controller.command('motor:disable')">
                         <i class="fa fa-unlock"></i> Disable Motors
                     </button>
-                </div>
+                </div> -->
                 <div class="col-xs-2">
                     <button
                         type="button"
@@ -393,7 +393,25 @@
                         G92 Z0
                     </button>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-3">
+                    <button
+                        type="button"
+                        class="btn btn-default"
+                        title="Z-Probe 0.82"
+                        onclick="cnc.controller.command('gcode', 'G91\n G38.2 Z-20 F200\n G90\n G10 L20 P1 Z0.82\n G91\n G0 Z4\nG90')">
+                        PRB 0.82
+                    </button>
+                </div>
+                <div class="col-xs-3">
+                    <button
+                        type="button"
+                        class="btn btn-default"
+                        title="Z-Probe 19.2"
+                        onclick="cnc.controller.command('gcode', 'G91\n G38.2 Z-20 F200\n G90\n G10 L20 P1 Z19.2\n G91\n G0 Z4\nG90')">
+                        PRB 19.2
+                    </button>
+                </div>
+                <!-- <div class="col-xs-2">
                     <button
                         type="button"
                         class="btn btn-default reload"
@@ -401,7 +419,7 @@
                         onclick="location.reload();">
                         <i class="fa fa-refresh"></i> Refresh
                     </button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
